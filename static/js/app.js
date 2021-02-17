@@ -65,29 +65,29 @@ function buildMetadata(sample) {
     });
   }
   
-//   function init() {
-//     var selector = d3.select("#selDataset");
+  function init() {
+    var selector = d3.select("#selDataset");
   
-//     d3.json("samples.json").then((data) => {
-//       var sampleNames = data.names;
+    d3.json("samples.json").then((data) => {
+      var sampleNames = data.names;
   
-//       sampleNames.forEach((sample) => {
-//         selector
-//           .append("option")
-//           .text(sample)
-//           .property("value", sample);
-//       });
+      sampleNames.forEach((sample) => {
+        selector
+          .append("option")
+          .text(sample)
+          .property("value", sample);
+      });
   
-//       var firstSample = sampleNames[0];
-//       buildCharts(firstSample);
-//       buildMetadata(firstSample);
-//     });
-//   }
+      var firstSample = sampleNames[0];
+      buildCharts(firstSample);
+      buildMetadata(firstSample);
+    });
+  }
   
-//   function optionChanged(newSample) {
-//     buildCharts(newSample);
-//     buildMetadata(newSample);
-//   }
+  function optionChanged(newSample) {
+    buildCharts(newSample);
+    buildMetadata(newSample);
+  }
   
   init();
   
